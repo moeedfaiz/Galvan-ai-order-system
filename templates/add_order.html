@@ -1,0 +1,10 @@
+<h2>Add New Order</h2>
+<form method="post">
+  Items: <input type="number" name="items" required><br>
+  Delivery Date: <input type="date" name="delivery_date" required><br>
+  Sender: <input type="text" name="sender" required><br>
+  Recipient: <input type="text" name="recipient" required><br>
+  Address: <input type="text" name="address" required><br>
+  <input type="submit" value="Add Order">
+</form>
+<a href="{{ url_for('index') }}">Back</a>

@@ -1,0 +1,24 @@
+<h2>All Orders</h2>
+<a href="{{ url_for('add_order') }}">Add New Order</a> | <a href="{{ url_for('view_logs') }}">View Logs</a>
+<table border="1">
+  <tr>
+    <th>ID</th><th>Items</th><th>Delivery Date</th>
+    <th>Sender</th><th>Recipient</th><th>Address</th><th>Status</th><th>Actions</th>
+  </tr>
+  {% for order in orders %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.items }}</td>
+      <td>{{ order.delivery_date }}</td>
+      <td>{{ order.sender }}</td>
+      <td>{{ order.recipient }}</td>
+      <td>{{ order.address }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <a href="{{ url_for('edit_order', order_id=order.id) }}">Edit</a> |
+        <a href="{{ url_for('deliver_order', order_id=order.id) }}">Deliver</a> |
+        <a href="{{ url_for('delete_order', order_id=order.id) }}">Delete</a>
+      </td>
+    </tr>
+  {% endfor %}
+</table>

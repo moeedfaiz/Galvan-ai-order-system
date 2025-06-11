@@ -1,0 +1,11 @@
+<h2>Edit Order #{{ order.id }}</h2>
+<form method="post">
+  Items: <input type="number" name="items" value="{{ order.items }}" required><br>
+  Delivery Date: <input type="date" name="delivery_date" value="{{ order.delivery_date }}" required><br>
+  Sender: <input type="text" name="sender" value="{{ order.sender }}" required><br>
+  Recipient: <input type="text" name="recipient" value="{{ order.recipient }}" required><br>
+  Address: <input type="text" name="address" value="{{ order.address }}" required><br>
+  <input type="submit" value="Update Order">
+</form>
+<a href="{{ url_for('index') }}">Back</a>
+
